@@ -20,15 +20,15 @@ export function findProduct(
 }
 
 export function getUnitActivePrice(product: Product): number {
-  if (product?.pricing?.isFree) return 0
-  return product.pricing.active
+  if (product.pricing?.isFree) return 0
+  return product.pricing?.active ?? 0
 }
 
 export function getUnitComparePrice(product: Product): number {
-  if (product.pricing.isFree) {
+  if (product.pricing?.isFree) {
     return product.pricing.compareAt ?? 0
   }
-  return product.pricing.compareAt ?? product.pricing.active
+  return product.pricing?.compareAt ?? product.pricing?.active ?? 0
 }
 
 export function getLineTotals(

@@ -99,6 +99,7 @@
           "description": "14-day cloud storage for all your Wyze cams",
           "learnMoreUrl": "https://www.wyze.com",
           "imageUrl": "src/assets/products/cam-unlimited.svg",
+          "pricing": { "active": 9.99, "compareAt": 12.99, "isMonthly": true },
           "reviewCategory": "plan"
         }
       ]
@@ -116,6 +117,7 @@
           "description": "Detect motion in your home",
           "learnMoreUrl": "https://www.wyze.com",
           "imageUrl": "src/assets/products/wyze-sense-motion-sensor.png",
+          "pricing": { "active": 29.99 },
           "reviewCategory": "sensors"
         },
         {
@@ -144,6 +146,7 @@
           "description": "Local storage for continuous recording",
           "learnMoreUrl": "https://www.wyze.com",
           "imageUrl": "src/assets/products/wyze-microsd-256gb.png",
+          "pricing": { "active": 20.98 },
           "reviewCategory": "accessories"
         }
       ]

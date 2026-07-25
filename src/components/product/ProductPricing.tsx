@@ -27,7 +27,9 @@ export function ProductPricing({
     }
 
     return (
-      <div className="flex flex-1 flex-col items-end justify-center gap-[3px] self-stretch 2xl:flex-row 2xl:items-center 2xl:justify-end">
+      <div
+        className={`flex flex-1 flex-col items-end justify-center gap-[3px] self-stretch 2xl:flex-row 2xl:items-center 2xl:justify-end${pricing.isMonthly ? ' 2xl:flex-wrap' : ''}`}
+      >
         {pricing.compareAt !== undefined &&
           pricing.compareAt !== pricing.active && (
             <span
