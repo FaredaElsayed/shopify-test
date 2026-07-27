@@ -17,8 +17,3 @@ Open http://localhost:5173
 npm run build
 npm run preview
 ```
-
-## Design reference
-
-- [Figma file](https://www.figma.com/design/JYf61etQVqeseX7oY5alGz/Frontend-Test-Figma?node-id=68-8088)
-- Local screenshots in `public/reference/`
