@@ -69,13 +69,13 @@ export function computeBundleTotals(
 ): BundleTotals {
   const lineItems = buildReviewLineItems(selections)
 
+  const shippingPricing = catalog.shipping?.pricing
   const activeTotal =
     lineItems.reduce((sum, item) => sum + item.lineActive, 0) +
-    (catalog.shipping.pricing.isFree ? 0 : catalog.shipping.pricing.active)
+    (shippingPricing?.isFree ? 0 : (shippingPricing?.active ?? 0))
 
-  // Shipping compare-at is shown struck-through but excluded from bundle compare total in the design.
   const shippingCompare = includeShippingCompareInTotal
-    ? (catalog.shipping.pricing.compareAt ?? 0)
+    ? (shippingPricing?.compareAt ?? 0)
     : 0
 
   const compareTotal =

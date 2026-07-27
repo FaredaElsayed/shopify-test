@@ -110,6 +110,7 @@ export function BundleProvider({ children }: { children: ReactNode }) {
 
   const clearSavedState = useCallback(() => {
     clearPersistedState()
+    dispatch({ type: 'CLEAR_SAVED' })
   }, [])
 
   const value = useMemo<BundleContextValue>(

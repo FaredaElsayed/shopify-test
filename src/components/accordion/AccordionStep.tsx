@@ -26,20 +26,20 @@ export function AccordionStep({
     <section
       className={
         isExpanded
-          ? 'border-b border-border-light last:border-b-0 2xl:flex 2xl:flex-col 2xl:items-stretch 2xl:gap-[5px] 2xl:self-stretch 2xl:rounded-card 2xl:border-0 2xl:bg-surface-review 2xl:pt-[15px]'
-          : 'border-b border-border-light last:border-b-0 2xl:flex 2xl:flex-col 2xl:items-stretch 2xl:gap-[5px] 2xl:self-stretch 2xl:border-0'
+          ? 'border-b border-border-light last:border-b-0 lg:flex lg:flex-col lg:items-stretch lg:gap-[5px] lg:self-stretch lg:rounded-card lg:border-0 lg:bg-surface-review lg:pt-[15px] 2xl:rounded-none 2xl:bg-transparent 2xl:pt-0 2xl:gap-0 2xl:border-b 2xl:border-border-light'
+          : 'border-b border-border-light last:border-b-0 lg:flex lg:flex-col lg:items-stretch lg:gap-[5px] lg:self-stretch lg:border-0 2xl:border-b 2xl:border-border-light 2xl:gap-0'
       }
       aria-labelledby={headerId}
     >
-      <p className="hidden px-[15px] text-[12px] font-medium uppercase leading-none tracking-[1.6px] text-[#484848] 2xl:flex 2xl:items-center">
+      <p className="hidden px-[15px] text-[12px] font-medium uppercase leading-none tracking-[1.6px] text-[#484848] lg:flex lg:items-center 2xl:hidden">
         Step {step.stepNumber} of {stepTotal}
       </p>
 
       <div
         className={
           isExpanded
-            ? '2xl:flex 2xl:flex-col 2xl:items-center 2xl:gap-[15px] 2xl:self-stretch 2xl:border-t-[0.5px] 2xl:border-text-primary 2xl:px-[15px] 2xl:py-5'
-            : '2xl:flex 2xl:flex-col 2xl:self-stretch 2xl:border-y-[0.5px] 2xl:border-text-primary 2xl:px-[15px] 2xl:py-5'
+            ? 'lg:flex lg:flex-col lg:items-center lg:gap-[15px] lg:self-stretch lg:border-t-[0.5px] lg:border-text-primary lg:px-[15px] lg:py-5 2xl:block 2xl:border-0 2xl:px-0 2xl:py-0 2xl:gap-0'
+            : 'lg:flex lg:flex-col lg:self-stretch lg:border-y-[0.5px] lg:border-text-primary lg:px-[15px] lg:py-5 2xl:block 2xl:border-0 2xl:px-0 2xl:py-0'
         }
       >
         <AccordionStepHeader
@@ -57,13 +57,13 @@ export function AccordionStep({
           hidden={!isExpanded}
           className={
             isExpanded
-              ? 'border-t border-border-light bg-surface-review px-4 pb-5 pt-4 md:px-5 2xl:w-full 2xl:border-0 2xl:bg-transparent 2xl:p-0'
+              ? 'border-t border-border-light bg-surface-review px-4 pb-5 pt-4 md:px-5 lg:w-full lg:border-0 lg:bg-transparent lg:p-0 2xl:border-t 2xl:border-border-light 2xl:bg-surface-review 2xl:px-5 2xl:pb-5 2xl:pt-4'
               : undefined
           }
         >
           {isExpanded && (
-            <div className="flex flex-col items-center gap-4 2xl:gap-[15px]">
-              <div className="-mx-1 flex w-full snap-x snap-mandatory items-center justify-center gap-4 overflow-x-auto px-1 pb-2 xl:mx-0 xl:flex-wrap xl:overflow-visible xl:px-0 xl:pb-0 2xl:flex-nowrap 2xl:gap-[15px] 2xl:overflow-visible">
+            <div className="flex flex-col items-center gap-4 lg:gap-[15px] 2xl:gap-4">
+              <div className="-mx-1 flex w-full snap-x snap-mandatory items-center justify-center gap-4 overflow-x-auto px-1 pb-2 lg:mx-0 lg:flex-nowrap lg:gap-[15px] lg:overflow-visible lg:px-0 lg:pb-0 2xl:flex-wrap 2xl:gap-4 2xl:overflow-visible">
                 {step.products.map((product) => (
                   <div key={product.id} className="snap-start shrink-0">
                     <ProductCard stepId={step.id} product={product} />
@@ -75,7 +75,7 @@ export function AccordionStep({
                 <button
                   type="button"
                   onClick={onNext}
-                  className="min-h-11 rounded-button border-2 border-wyze-purple px-6 py-2.5 text-sm font-semibold text-wyze-purple transition hover:bg-wyze-purple/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wyze-purple 2xl:min-h-0 2xl:rounded-[7px] 2xl:border 2xl:px-6 2xl:py-[5px] 2xl:text-[18px] 2xl:leading-6"
+                  className="min-h-11 rounded-button border-2 border-wyze-purple px-6 py-2.5 text-sm font-semibold text-wyze-purple transition hover:bg-wyze-purple/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wyze-purple lg:min-h-0 lg:rounded-[7px] lg:border lg:px-6 lg:py-[5px] lg:text-[18px] lg:leading-6 2xl:min-h-11 2xl:rounded-button 2xl:border-2 2xl:py-2.5 2xl:text-sm 2xl:leading-normal"
                 >
                   {step.nextStepLabel}
                 </button>

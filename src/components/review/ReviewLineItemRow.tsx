@@ -18,14 +18,14 @@ export function ReviewLineItemRow({ item }: ReviewLineItemRowProps) {
   const lineLabel = getReviewDisplayName(item)
 
   return (
-    <div className="flex w-full items-start gap-4 2xl:items-center">
+    <div className="flex w-full items-start gap-4 lg:items-center 2xl:items-start">
       <div className="flex min-w-0 flex-1 items-center gap-3">
         <ProductImage
           src={product.imageUrl}
           alt={product.name}
           className={`h-[41px] w-[41px] shrink-0 rounded-[5px]${product.imageWhiteBg ? ' bg-white' : ''}`}
         />
-        <p className="min-w-0 flex-1 text-[14px] font-medium leading-4 tracking-[0.005em] text-stepper-qty 2xl:text-[18px]">
+        <p className="min-w-0 flex-1 text-[14px] font-medium leading-4 tracking-[0.005em] text-stepper-qty lg:text-[18px] 2xl:text-[14px]">
           {product.name}
           {product.subName && (
             <span className="text-wyze-blue-unlimited">{product.subName}</span>

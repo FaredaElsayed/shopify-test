@@ -1,9 +1,6 @@
 import type { Config } from 'tailwindcss'
 import { tokens } from './src/styles/tokens'
 
-/**
- * Tailwind theme is derived from `src/styles/tokens.ts` — do not diverge hex values here.
- */
 const config: Config = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {

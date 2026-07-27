@@ -3,13 +3,19 @@ import { useEffect, useId, useRef } from 'react'
 interface CheckoutModalProps {
   open: boolean
   onClose: () => void
+  onConfirm: () => void
   totalLabel: string
 }
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
-export function CheckoutModal({ open, onClose, totalLabel }: CheckoutModalProps) {
+export function CheckoutModal({
+  open,
+  onClose,
+  onConfirm,
+  totalLabel,
+}: CheckoutModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const previouslyFocusedRef = useRef<HTMLElement | null>(null)
@@ -19,7 +25,9 @@ export function CheckoutModal({ open, onClose, totalLabel }: CheckoutModalProps)
     if (!open) return
 
     previouslyFocusedRef.current =
-      document.activeElement instanceof HTMLElement ? document.activeElement : null
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null
 
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -87,8 +95,8 @@ export function CheckoutModal({ open, onClose, totalLabel }: CheckoutModalProps)
     >
       <button
         type="button"
-        className="absolute inset-0 bg-text-navy/40"
-        aria-label="Close checkout dialog"
+        className="absolute inset-0 bg-black/80"
+        aria-label="Close checkout confirmation"
         onClick={onClose}
       />
       <div
@@ -100,22 +108,19 @@ export function CheckoutModal({ open, onClose, totalLabel }: CheckoutModalProps)
         className="relative w-full max-w-md rounded-card border border-border bg-surface-card p-6 shadow-review outline-none"
       >
         <h2 id={titleId} className="text-xl font-bold text-text-primary">
-          Checkout placeholder
+          Checkout confirmation
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-          This prototype doesn&apos;t process payments. Your configured system total is{' '}
+          Confirm your security system order totaling{' '}
           <span className="font-semibold text-text-primary">{totalLabel}</span>.
-        </p>
-        <p className="mt-2 text-sm text-text-secondary">
-          In a production flow, you&apos;d continue to payment and order confirmation here.
         </p>
         <button
           ref={closeButtonRef}
           type="button"
-          onClick={onClose}
-          className="mt-6 w-full rounded-button bg-wyze-purple py-3 text-sm font-semibold text-white hover:bg-wyze-purple-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wyze-purple"
+          onClick={onConfirm}
+          className="mt-6 flex h-12 w-full items-center justify-center rounded bg-wyze-purple px-4 py-[13px] text-[17px] font-bold leading-[22px] text-white transition hover:bg-wyze-purple-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wyze-purple"
         >
-          Got it
+          Confirm
         </button>
       </div>
     </div>

@@ -13,14 +13,14 @@ export function ProductPricing({
   align = 'right',
   variant = 'default',
 }: ProductPricingProps) {
-  const { pricing } = product
+  const pricing = product.pricing ?? { active: 0 }
 
   if (variant === 'card') {
     if (pricing.isFree) {
       return (
-        <div className="flex flex-1 flex-col items-end justify-center gap-[3px] self-stretch 2xl:flex-row 2xl:items-center 2xl:justify-end">
+        <div className="flex flex-1 flex-col items-end justify-center gap-[3px] self-stretch lg:flex-row lg:items-center lg:justify-end 2xl:flex-col 2xl:items-end 2xl:justify-center">
           <span className="text-[16px] font-normal leading-none tracking-[0.6px] text-wyze-purple">
-            FREE
+            {pricing.isFree ? 'FREE' : formatMoney(pricing.active, { monthly: pricing.isMonthly })}
           </span>
         </div>
       )
@@ -28,7 +28,7 @@ export function ProductPricing({
 
     return (
       <div
-        className={`flex flex-1 flex-col items-end justify-center gap-[3px] self-stretch 2xl:flex-row 2xl:items-center 2xl:justify-end${pricing.isMonthly ? ' 2xl:flex-wrap' : ''}`}
+        className={`flex flex-1 flex-col items-end justify-center gap-[3px] self-stretch lg:flex-row lg:items-center lg:justify-end 2xl:flex-col 2xl:items-end 2xl:justify-center${pricing.isMonthly ? ' lg:flex-wrap 2xl:flex-nowrap' : ''}`}
       >
         {pricing.compareAt !== undefined &&
           pricing.compareAt !== pricing.active && (

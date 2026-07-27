@@ -29,7 +29,6 @@ export interface GroupedReviewLineItems {
 }
 
 export interface DisplayTotals extends BundleTotals {
-  /** Footer values from design mockups */
   displayActiveTotal: number
   displayCompareTotal: number
   displaySavings: number

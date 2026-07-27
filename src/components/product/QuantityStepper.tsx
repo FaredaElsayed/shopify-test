@@ -41,7 +41,7 @@ export function QuantityStepper({
   if (size === 'card') {
     return (
       <div
-        className="flex h-[35px] w-[80px] flex-row items-center justify-center gap-[10px] rounded py-1 2xl:h-[28px]"
+        className="flex h-[35px] w-[80px] flex-row items-center justify-center gap-[10px] rounded py-1 lg:h-[28px] 2xl:h-[35px]"
         role="group"
         aria-label={`Quantity for ${label}`}
         onKeyDown={handleKeyDown}

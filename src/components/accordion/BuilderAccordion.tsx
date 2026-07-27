@@ -7,7 +7,7 @@ export function BuilderAccordion() {
 
   return (
     <div
-      className="overflow-hidden rounded-card border border-border bg-surface-card shadow-card 2xl:flex 2xl:flex-col 2xl:items-stretch 2xl:gap-[13px] 2xl:overflow-visible 2xl:rounded-none 2xl:border-0 2xl:bg-transparent 2xl:shadow-none"
+      className="overflow-hidden rounded-card border border-border bg-surface-card shadow-card lg:flex lg:flex-col lg:items-stretch lg:gap-[13px] lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:shadow-none 2xl:rounded-card 2xl:border 2xl:bg-surface-card 2xl:shadow-card 2xl:overflow-hidden 2xl:gap-0"
       aria-label="Bundle builder steps"
     >
       {catalog.steps.map((step, index) => (

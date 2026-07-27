@@ -1,7 +1,7 @@
 type StepIconName = "camera" | "shield" | "sensor" | "protection";
 
 const iconClass =
-  "h-5 w-5 shrink-0 text-text-secondary 2xl:h-[30px] 2xl:w-[30px] 2xl:text-[#6F7882]";
+  "h-5 w-5 shrink-0 text-text-secondary lg:h-[30px] lg:w-[30px] lg:text-[#6F7882] 2xl:h-5 2xl:w-5 2xl:text-text-secondary";
 
 export function StepIcon({ name }: { name: StepIconName }) {
   switch (name) {

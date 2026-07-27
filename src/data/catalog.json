@@ -126,7 +126,7 @@
           "description": "Required hub for Wyze Sense sensors",
           "learnMoreUrl": "https://www.wyze.com",
           "imageUrl": "src/assets/products/wyze-cam-floodlight-v2.png",
-          "pricing": { "active": 0, "compareAt": 29.98, "isFree": true },
+          "pricing": { "active": 20, "compareAt": 29.98, "isFree": true },
           "reviewCategory": "sensors",
           "required": true,
           "minQuantity": 1

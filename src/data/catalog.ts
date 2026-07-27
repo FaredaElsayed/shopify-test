@@ -15,5 +15,4 @@ function withProductImages(data: Catalog): Catalog {
   }
 }
 
-/** Hydrated catalog (JSON + Vite-resolved product images). */
 export const catalog = withProductImages(catalogData as Catalog)

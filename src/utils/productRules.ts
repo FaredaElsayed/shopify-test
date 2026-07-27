@@ -12,7 +12,6 @@ export function isRequiredProduct(product: Product): boolean {
   return Boolean(product.required && (product.minQuantity ?? 0) >= 1)
 }
 
-/** True when quantity cannot change (e.g. required hub min=max=1). */
 export function isQuantityLocked(product: Product): boolean {
   const { min, max } = getQuantityBounds(product)
   return min === max
